@@ -2,8 +2,9 @@
 #include<stdlib.h>
 
 //function declaration
-int sumArray(int array[], int size){
-	int temp, i;
+float sumArray(float array[], int size){
+	float temp;
+	int i;
 	for(i = 0; i < size; i++){
 		temp = temp + array[i];
 	}
@@ -13,20 +14,21 @@ int sumArray(int array[], int size){
 //main function
 int main()
 {
-	int a, sum = 0, i;
+	int a, i;
+	float sum = 0;
 	printf("Enter the size of your array: ");
 	scanf("%d", &a);
 	
-	int arr[a];
+	float arr[a];
 	printf("Enter the values of your array\n");
 	for(i = 0; i < a; i++){
 		printf("value %d: ",i+1);
-		scanf("%d", &arr[i]);
+		scanf("%f", &arr[i]);
 	}
 	
 	//function calling
 	sum = sumArray(arr,a);
 	
-	printf("The sum of all the values in your array is : %d", sum);
+	printf("The sum of all the values in your array is : %0.2f", sum);
 	return 0;
 }
